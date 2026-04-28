@@ -1,8 +1,8 @@
 ---
-name: ":recycle: REFACTOR:"
-about: 리팩토링 템플릿입니다
-title: ":recycle: refactor:"
-labels: ":recycle: refactor"
+name: "\U0001F49A CI/CD:"
+about: 배포 작업 템플릿입니다.
+title: "\U0001F49A CI/CD:"
+labels: ''
 assignees: ''
 
 ---

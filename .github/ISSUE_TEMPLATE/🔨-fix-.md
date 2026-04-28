@@ -1,8 +1,8 @@
 ---
-name: ":recycle: REFACTOR:"
-about: 리팩토링 템플릿입니다
-title: ":recycle: refactor:"
-labels: ":recycle: refactor"
+name: "\U0001F528 FIX:"
+about: Describe this issue template's purpose here.
+title: "\U0001F528 FIX:"
+labels: "\U0001F528 fix"
 assignees: ''
 
 ---

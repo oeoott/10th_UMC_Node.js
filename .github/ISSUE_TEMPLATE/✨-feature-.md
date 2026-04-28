@@ -1,8 +1,8 @@
 ---
-name: ":recycle: REFACTOR:"
-about: 리팩토링 템플릿입니다
-title: ":recycle: refactor:"
-labels: ":recycle: refactor"
+name: "✨ FEATURE:"
+about: 기능 개발 이슈 템플릿입니다.
+title: "✨ FEATURE:"
+labels: ":sparkles: feature"
 assignees: ''
 
 ---

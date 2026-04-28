@@ -1,8 +1,8 @@
 ---
-name: ":recycle: REFACTOR:"
-about: 리팩토링 템플릿입니다
-title: ":recycle: refactor:"
-labels: ":recycle: refactor"
+name: "\U0001F4DD DOCS:"
+about: 문서 작업 템플릿입니다.
+title: "\U0001F4DD DOCS:"
+labels: ":memo: docs"
 assignees: ''
 
 ---
