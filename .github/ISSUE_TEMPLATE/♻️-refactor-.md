@@ -1,7 +1,7 @@
 ---
-name: ":recycle: REFACTOR:"
+name: "♻️ REFACTOR:"
 about: 리팩토링 템플릿입니다
-title: ":recycle: refactor:"
+title: "♻️ refactor:"
 labels: ":recycle: refactor"
 assignees: ''
 
