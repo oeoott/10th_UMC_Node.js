@@ -4,7 +4,9 @@
   "description": "UMC 10기 Node.js 실습 레포입니다.",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon --watch '*.ts' --exec tsx ./src/app.ts",
+    "start": "tsoa spec-and-routes && tsx src/app.ts",
+    "dev": "tsoa spec-and-routes && nodemon --exec tsx src/app.ts",
+    "start:dev": "npm run dev",
     "build": "tsc"
   },
   "keywords": [],
@@ -12,11 +14,18 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
     "express": "^5.2.1",
+    "morgan": "^1.10.1",
     "nodemon": "^3.1.14",
+    "tsoa": "^7.0.0-alpha.0",
     "tsx": "^4.21.0"
   },
   "devDependencies": {
-    "@types/express": "^5.0.6"
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/morgan": "^1.9.10"
   }
 }
