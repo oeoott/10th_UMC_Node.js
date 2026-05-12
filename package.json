@@ -4,19 +4,25 @@
   "description": "UMC 10기 Node.js 실습 레포입니다.",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon --watch '*.ts' --exec tsx ./src/app.ts",
-    "build": "tsc"
+    "dev": "nodemon --ext ts --exec \"npx prisma generate && tsx ./src/app.ts\"",
+    "start:dev": "node dist/app.js",
+    "build": "npx prisma generate && tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "express": "^5.2.1",
-    "nodemon": "^3.1.14",
-    "tsx": "^4.21.0"
+    "@prisma/client": "^5.20.0",
+    "dotenv": "^16.4.5",
+    "express": "^5.2.1"
   },
   "devDependencies": {
-    "@types/express": "^5.0.6"
+    "@types/express": "^5.0.6",
+    "@types/node": "^20.14.0",
+    "nodemon": "^3.1.14",
+    "prisma": "^5.20.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.5.2"
   }
 }

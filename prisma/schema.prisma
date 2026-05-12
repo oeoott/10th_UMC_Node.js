@@ -1,0 +1,83 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  Int                   @id @default(autoincrement())
+  email               String                @unique
+  name                String
+  gender              String
+  birth               DateTime
+  address             String
+  detailAddress       String?              @map("detail_address")
+  phoneNumber         String               @map("phone_number")
+  nickname            String?              @db.VarChar(50)
+  userFavorCategories UserFavorCategory[]
+  reviews             Review[]
+  userMissions        UserMission[]
+
+  @@map("user")
+}
+
+model FoodCategory {
+  id                  Int                   @id @default(autoincrement())
+  name                String
+  userFavorCategories UserFavorCategory[]
+
+  @@map("food_category")
+}
+
+model UserFavorCategory {
+  id           Int          @id @default(autoincrement())
+  userId       Int          @map("user_id")
+  categoryId   Int          @map("category_id")
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category     FoodCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@map("user_favor_category")
+}
+
+model Store {
+  id       Int       @id @default(autoincrement())
+  name     String
+  reviews  Review[]
+  missions Mission[]
+
+  @@map("store")
+}
+
+model Review {
+  id      Int     @id @default(autoincrement())
+  storeId Int     @map("store_id")
+  userId  Int     @map("user_id")
+  content String
+  store   Store   @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("review")
+}
+
+model Mission {
+  id           Int           @id @default(autoincrement())
+  storeId      Int           @map("store_id")
+  store        Store         @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  userMissions UserMission[]
+
+  @@map("mission")
+}
+
+model UserMission {
+  id        Int     @id @default(autoincrement())
+  userId    Int     @map("user_id")
+  missionId Int     @map("mission_id")
+  status    String  @default("ONGOING")
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  mission   Mission @relation(fields: [missionId], references: [id], onDelete: Cascade)
+
+  @@map("user_mission")
+}
