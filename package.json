@@ -4,6 +4,7 @@
   "description": "UMC 10기 Node.js 실습 레포입니다.",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon --watch '*.ts' --exec tsx ./src/app.ts",
     "start:dev": "nodemon --watch '*.ts' --exec tsx ./src/app.ts",
     "build": "tsc"
   },
